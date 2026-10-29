@@ -1,0 +1,6 @@
+{
+  "name": "My Daily Expenses",
+  "description": "Android Material 3 daily expense tracker with automatic calculations, category summaries, budget monitoring, and offline persistence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

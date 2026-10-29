@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #006874;
+    --color-primary-container: #97f0ff;
+    --color-on-primary: #ffffff;
+    --color-on-primary-container: #001f24;
+    --color-surface: #fbfcfe;
+    --color-surface-container: #eff1f3;
+    --color-surface-container-high: #e9ebed;
+    --color-outline: #6f797a;
+    --color-outline-variant: #bfc8ca;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    background-color: #f4f6f8;
+    color: #1a1c1e;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  /* Dark mode overrides */
+  .dark body {
+    background-color: #0f1416;
+    color: #e1e3e5;
+  }
+}
+
+/* Material 3 ripple and smooth animations */
+.m3-card {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.m3-card:hover {
+  transform: translateY(-1px);
+}
+
+.m3-card:active {
+  transform: scale(0.99);
+}
+
+/* Hide scrollbar for horizontal chip bars while keeping scroll functional */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Print styles for export reports */
+@media print {
+  body {
+    background-color: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
