@@ -16,11 +16,11 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: 20
+        node-version: 18
 
     - name: Install Web Dependencies & Build
       run: |
-        npm install
+        npm install --legacy-peer-deps --no-audit
         npm run build
 
     - name: Set up JDK 17
@@ -31,7 +31,7 @@ jobs:
 
     - name: Setup Android Project via Capacitor
       run: |
-        npm install @capacitor/core @capacitor/cli @capacitor/android
+        npm install --legacy-peer-deps @capacitor/core @capacitor/cli @capacitor/android
         npx cap init "My Daily Expenses" "com.mydailyexpenses.app" --web-dir dist
         npx cap add android
         npx cap sync android
